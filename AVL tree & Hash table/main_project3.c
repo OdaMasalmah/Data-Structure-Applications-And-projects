@@ -35,7 +35,8 @@ int main()
     int ind = 0 ;
     double vi =0 ;
     do
-    {                     // main tree menu
+    {
+        // main tree menu
         clear_screan();
         printf("\n\n\t\t\t Choose one of the following.\n\n") ;
         printf("\t\t\t 1)- Print the node sorted.\n\n") ;
@@ -129,7 +130,7 @@ int main()
                     x1 = x1->next ;
                 }
                 char o[50], ccname[MAX_D] ;
-                                             // menu to delete the country or city
+                // menu to delete the country or city
                 printf("\n\t\t_______________________________________________________________________________\n");
                 printf("\t\t The country contain all of above are you sure to delete it?");
                 printf("\n\t\t 1 - Yes, sure.");
@@ -260,19 +261,22 @@ void menu_hash(hash_table *table, int size) // menu of hash
                 printf("\n\tWrite the name of city to delete it.\n\t ->") ;
                 gets(nn) ;
                 int r = 0 ;
-                int key = get_key( ncity , n ) ;
+                int key = get_key( ncity, n ) ;
                 city ct =  table[key].node ;
-                while(ct != NULL){
-                    if(strcmp( nn , ct->name) == 0){
-                        table = delete_value(table , n , ncity ,nn ); // delete the city
-                numOfelement--;
-                r =1 ;
-                printf("\n\tDeleted.");
-                break ;
+                while(ct != NULL)
+                {
+                    if(strcmp( nn, ct->name) == 0)
+                    {
+                        table = delete_value(table, n, ncity,nn );    // delete the city
+                        numOfelement--;
+                        r =1 ;
+                        printf("\n\tDeleted.");
+                        break ;
                     }
                     ct = ct->next ;
                 }
-                if(!r)printf("\n\tCity not found.");
+                if(!r)
+                    printf("\n\tCity not found.");
 
             }
             else
